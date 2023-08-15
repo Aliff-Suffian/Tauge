@@ -13,8 +13,8 @@ get '/getstarted' do
   session[:identify]? session.delete(:identify) : ''
   '<form action="/login" method="POST">
   Name : <input type="text" name="identify">
-  <br>Password : <input type="text">
-  <br>Confirm Password : <input type="text">
+  <br>Password : <input type="password">
+  <br>Confirm Password : <input type="password">
   <br><button>Sign Up</button>
   </form>'
 end
@@ -23,7 +23,7 @@ get '/login' do
   session[:identify]? session.delete(:identify) : ''
   '<form action="/login" method="POST">
   Name : <input type="text" name="identify">
-  <br>Password : <input type="text">
+  <br>Password : <input type="password">
   <br><button>Sign In</button>
   </form>'
 end
