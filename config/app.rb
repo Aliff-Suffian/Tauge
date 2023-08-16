@@ -1,6 +1,7 @@
 require 'sinatra'
-require 'rubygems'
+require 'sinatra/activerecord'
 
+set :database, "sqlite3:tauge.sqlite3"
 set :public_folder, __dir__ + '/static'
 
 configure do
@@ -32,5 +33,9 @@ end
 post '/login' do
   session[:identity] = params['identity']
 	redirect to '/'
+end
+
+get '/dashboard' do
+    erb :dashboard
 end
 
