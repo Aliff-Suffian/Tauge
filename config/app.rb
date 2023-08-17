@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './users.rb'
+require './config/users.rb'
 
 set :database, "sqlite3:tauge.sqlite3"
 set :public_folder, __dir__ + '/static'
