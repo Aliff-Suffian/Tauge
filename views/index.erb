@@ -11,5 +11,11 @@
 </head>
 <body>
     <h1>Tauge</h1>
+    <ul>
+    <% @users.each do | user | %>
+        <li><%= user.name %>, <%= user.email %>, <%= user.password %> </li>
+        
+    <% end %>
+    </ul>
 </body>
 </html>

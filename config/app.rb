@@ -3,14 +3,15 @@ require 'sinatra/activerecord'
 require './config/users.rb'
 
 set :database, "sqlite3:tauge.sqlite3"
-set :public_folder, __dir__ + '/static'
+set :public_folder, File.expand_path('../../static', __FILE__)
+set :views, File.expand_path('../../views', __FILE__)
 
 configure do
   enable :sessions
 end
 
 get '/' do
-
+  @users = User.all
   erb :index
 end
 
@@ -38,5 +39,10 @@ end
 
 get '/dashboard' do
     erb :dashboard
+end
+
+get '/' do
+	@posts = User.all
+	erb :index
 end
 
