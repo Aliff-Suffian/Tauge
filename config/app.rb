@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './config/users.rb'
+require 'bcrypt'
 
 set :database, "sqlite3:tauge.sqlite3"
 set :public_folder, File.expand_path('../../static', __FILE__)
@@ -9,6 +10,7 @@ set :views, File.expand_path('../../views', __FILE__)
 configure do
   enable :sessions
 end
+
 
 get '/' do
   @users = User.all
@@ -37,12 +39,14 @@ post '/login' do
 	redirect to '/'
 end
 
-get '/dashboard' do
-    erb :dashboard
+post '/register' do
+  @users = User.create(name: params[:name], email: params[:email], password_digest: params[:password])
+  
+  erb :getstarted
+  redirect '/' 
 end
 
-get '/' do
-	@posts = User.all
-	erb :index
-end
+
+
+
 
