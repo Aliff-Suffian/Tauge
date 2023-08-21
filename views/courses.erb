@@ -10,15 +10,24 @@
     <title>Tauge</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
-    <h2>All Users<h2>
-    <ul>
-    <% @users.each do | user | %>
-        <li><%= user.name %>, <%= user.email %> <%= user.password %> </li>
+    <header>
+        <a href="home" class="logo"><img src="images/home-logo.jpg" alt=""></a>	
+        <div class="navbar">
+            <a href="home">Home</a>
+            <a href="home">Teaching Material</a>
+            <a href="home">Courses</a>
         
-    <% end %>
-    </ul>
+        
+        </div>
 
+    </header>
     
+    <div class="home_image">
+    <img src="images/tauge-home.jpg" height="300" width="500" />
+    </div>
+    <h1><span>Learn without limits</span><br>Transform lives through learning</h1>
+    <p>Help us bring affordable, job-relevant education to every corner of the world.</p>
+
+   
 </body>
 </html>

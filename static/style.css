@@ -1,14 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2 rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+section{
+  padding: 50px 100px;
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: aliceblue;
+  padding: 15px 100px;
+}
+
+.logo img {
+  width: 150px;
+}
+.home_image img{
+  margin-top: 15rem;
+  margin-left: 48rem;
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+}
+
+.navbar a {
+  font-size: 2rem;
+  padding: 10px 20px;
+  color:black;
+  font-weight: 500;
+}
+.navbar a::after{
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.5s;
+}
+
+.navbar a:hover::after{
+  width: 100%;
+
+}
+
+.header-btn a{
+  padding: 10px 20px;
+  color:aqua;
+  background-color: black;
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
 h1 {
-    background-color:  #addada;
-    text-align: center;
+  background-color:  #addada;
+  text-align: center;
+  font-style: serif;
 }
-
-h2 {
-    text-align: center;
+p {
+  background-color: #addada;
+  text-align:center;
+  font-size: medium;
 }
-
 body {
-    background-color: rgb(240, 240, 240);
+  background-color: rgb(240, 240, 240);
 }
 
 .form-group {

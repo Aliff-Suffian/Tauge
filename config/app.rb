@@ -56,6 +56,11 @@ post '/register' do
   redirect '/' 
 end
 
+post '/courses' do
+  erb :courses
+  
+end
+
 
 
 
