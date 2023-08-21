@@ -11,8 +11,11 @@ configure do
   enable :sessions
 end
 
-
 get '/' do
+  erb :home
+end
+
+post '/dashboard' do
   @users = User.all
   erb :index
 end
@@ -28,6 +31,13 @@ get '/login' do
   
   erb :login
 end
+
+get '/teacher' do
+  session[:identify]? session.delete(:identify) : ''
+  
+  erb :teacher
+end
+
 
 post '/getstarted' do
   session[:identity] = params['identity']
@@ -45,6 +55,10 @@ post '/register' do
   erb :getstarted
   redirect '/' 
 end
+
+
+
+
 
 
 
