@@ -9,4 +9,6 @@ class Teacher < ActiveRecord::Base
         @password = Password.create(new_password)
         self.password_digest = @password
     end
+
+    has_many :courses 
 end

@@ -7,12 +7,11 @@ class ApplicationController < Sinatra::Base
     # Set views folder
     set :views, File.expand_path('../../views',__FILE__)
 
-    get '/' do
+      get '/' do
         erb :home
       end
-      
-      post '/dashboard' do
-        @users = User.all
+
+      get '/index' do
         erb :index
       end
       
@@ -23,12 +22,16 @@ class ApplicationController < Sinatra::Base
       get '/login' do
         erb :login
       end
-      
+
       get '/teacher' do
-        @user = User.find_by_email(params[:email])
-        if @user.password == params[:password]
-            session[:user_id] = @user.id 
-            redirect '/courses'
+        erb :teacher
+      end
+      
+      post '/teacher' do
+        @teacher = Teacher.find_by_email(params[:email])
+        if @teacher.password == params[:password]
+            session[:teacher_id] = @teacher.id 
+            redirect '/index'
         else
             redirect to '/'
         end
@@ -36,7 +39,7 @@ class ApplicationController < Sinatra::Base
       
       
       post '/getstarted' do
-        
+
           redirect to '/'
       end
       
@@ -65,5 +68,9 @@ class ApplicationController < Sinatra::Base
       get '/home' do
         erb :home
       end
+
+     post '/index' do
+        redirect '/courses'
+     end
 
 end

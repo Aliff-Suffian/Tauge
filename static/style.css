@@ -30,7 +30,7 @@ header{
 }
 .home_image img{
   margin-top: 15rem;
-  margin-left: 48rem;
+  margin-left: 45rem;
 }
 
 .navbar {
@@ -69,10 +69,11 @@ header{
 h1 {
   background-color:  #addada;
   text-align: center;
-  font-style: serif;
+  font-family: Serif;
 }
 h2 {
   text-align: center;
+  font-family: Serif;
 }
 p {
   background-color: #addada;
@@ -84,24 +85,37 @@ body {
 }
 
 .form-group {
-    margin-bottom: 15px;
-    position: relative;
+  margin-bottom: 15px;
+  position: relative;
     
-  }
+}
 .form-label {
-    color: #addada;
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0 auto 8px;
-  }
+  color: #addada;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 auto 8px;
+}
 .form-control {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    box-shadow: none;
-    color: black;
-    font-size: 15px;
-    height: 46px;
-    line-height: 30px;
-    padding: 0 15px;
-  }
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: black;
+  font-size: 15px;
+  height: 46px;
+  line-height: 30px;
+  padding: 0 15px;
+}
+.text-area{
+  position: relative;
+}
+
+* {margin:auto; padding:10px;}
+	#login-title {
+		height:40px;
+		border-radius: 8px;
+		background-repeat:no-repeat;
+		background-position:7px 7px;
+		background-size:24px 24px;
+	
+	}

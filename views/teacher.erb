@@ -10,12 +10,14 @@
     <title>Tauge</title>
 </head>
 <body>
-    <h1>Tauge</h1>
-    <h2>Teacher Log In</h2>
+  <div id="login-title">
+  <h1 style="margin:0px;  font-family:Serif;">Tauge</h1>
+  </div>
+  <h2>Teacher Log In</h2>
 
-  <form method="post" action="/dashboard">
+  <form method="post" action="/teacher">
   <div class="form-group">
-    <input type="text" class="form-control" name="text" placeholder="Enter your ID" required="required">
+    <input type="text" class="form-control" name="email" placeholder="Enter your email" required="required">
   </div>
   <div class="form-group">
     <input type="password" class="form-control" name="password" placeholder="Password" required="required">
