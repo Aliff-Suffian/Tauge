@@ -43,14 +43,19 @@
 
     <h2>Start learning for free with our high-quality free courses</h2> 
     <div id="main-container">
-	<div id="box">Introduction to HTML</div>
-	<div id="box">Introduction to CSS</div>
-	<div id="box">Introduction to JavaScript</div>
-	<div style="grid-column-start:1; grid-column-end:4; border:2px;">View All </div>
-    </div>
 
-    
-    
-    
+    <% if @courses.any? %>
+        <% @courses.each do |course| %>
+            <div id="box">
+                <p><%= course.title %></p>
+                <p><%= course.description %></p>
+                <p><%= course.thumbnail %></p>
+            </div>
+        <% end %>
+    <% else %>
+        <p>No courses available.</p>
+    <% end %>
+	<div style="grid-column-start:1; grid-column-end:4; border:2px;">View All</div>
+    </div>
 </body>
 </html>

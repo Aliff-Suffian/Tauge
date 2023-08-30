@@ -14,35 +14,25 @@ class ApplicationController < Sinatra::Base
       get '/index' do
         erb :index
       end
+
+      post '/index' do
+        redirect '/courses'
+      end
       
       get '/getstarted' do
         erb :getstarted
       end
+
+      post '/getstarted' do
+
+        redirect to '/'
+      end
+    
       
       get '/login' do
         erb :login
       end
 
-      get '/teacher' do
-        erb :teacher
-      end
-      
-      post '/teacher' do
-        @teacher = Teacher.find_by_email(params[:email])
-        if @teacher.password == params[:password]
-            session[:teacher_id] = @teacher.id 
-            redirect '/index'
-        else
-            redirect to '/'
-        end
-      end   
-      
-      
-      post '/getstarted' do
-
-          redirect to '/'
-      end
-      
       post '/login' do
         @user = User.find_by_email(params[:email])
         if @user.password == params[:password]
@@ -52,7 +42,21 @@ class ApplicationController < Sinatra::Base
             redirect to '/'
         end
       end   
-      
+
+      get '/teacher' do
+        erb :teacher
+      end
+
+      post '/teacher' do
+        @teacher = Teacher.find_by_email(params[:email])
+        if @teacher.password == params[:password]
+            session[:teacher_id] = @teacher.id 
+            redirect '/index'
+        else
+            redirect to '/'
+        end
+      end   
+        
       post '/register' do
         @users = User.create(name: params[:name], email: params[:email], password: params[:password])
         
@@ -61,16 +65,21 @@ class ApplicationController < Sinatra::Base
       end
       
       get '/courses' do
+        @courses = Course.all
         erb :courses
-        
       end
       
       get '/home' do
         erb :home
       end
 
-     post '/index' do
-        redirect '/courses'
-     end
+      get '/create' do
+        @courses = Course.all
+        erb :index
+      end
 
+      post '/create' do
+        @course = Course.create(title: params[:title], description: params[:description], thumbnail: params[:thumbnail])
+        redirect '/courses'  
+      end
 end
